@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import { Players, BoardValues } from 'types';
-import * as actions from 'store/actions';
+import * as actions from 'store/actions/games';
 import { getBoardValues, getWinner } from 'store/selectors';
 import checkForWinner from 'helpers/check-for-winner';
 import { State } from 'store';

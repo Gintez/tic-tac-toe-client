@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { renderWithProviders } from 'helpers/test-utils';
-import * as actions from 'store/actions';
+import * as actions from 'store/actions/games';
 import { CellIds, Signs } from 'types';
 
 import { GameLogging } from './game-logging';

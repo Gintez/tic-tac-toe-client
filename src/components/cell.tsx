@@ -7,7 +7,7 @@ import clsx from 'clsx';
 import { Players, Signs, CellIds } from 'types';
 import { PLAYER_SIGNS } from 'types/constants';
 import { getCellValue, getCurrentPlayer, getWinner } from 'store/selectors';
-import * as actions from 'store/actions';
+import * as actions from 'store/actions/games';
 import { State } from 'store';
 
 const useStyles = createUseStyles({

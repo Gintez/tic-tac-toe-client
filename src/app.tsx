@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { createUseStyles } from 'react-jss';
+import { Dispatch, bindActionCreators } from 'redux';
 
 import { isGameStarted } from 'store/selectors';
 import StartGameButton from 'components/start-game-button';
 import Game from 'components/game';
 import { State } from 'store';
+import * as userActions from 'store/actions/users';
 
 const useStyles = createUseStyles({
   root: {
@@ -20,11 +22,20 @@ interface StateProps {
   isGameStarted: boolean;
 }
 
-type Props = StateProps;
+interface DispatchProps {
+  actions: {
+    users: typeof userActions;
+  }
+}
+
+type Props = StateProps & DispatchProps;
 
 export const App = (props: Props) => {
-  const { isGameStarted } = props;
+  const { isGameStarted, actions } = props;
   const classes = useStyles();
+  useEffect(() => {
+    actions.users.getUsers();
+  }, [])
 
   return (
     <div className={classes.root}>
@@ -37,4 +48,10 @@ const mapStateToProps = (state: State): StateProps => ({
   isGameStarted: isGameStarted(state),
 });
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+  actions: {
+    users: bindActionCreators(userActions, dispatch),
+  }
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

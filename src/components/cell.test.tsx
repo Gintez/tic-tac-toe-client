@@ -4,7 +4,7 @@ import { fireEvent } from '@testing-library/react';
 import { renderWithProviders } from 'helpers/test-utils';
 import { CellIds, Players, Signs } from 'types';
 import { PLAYER_SIGNS } from 'types/constants';
-import * as actions from 'store/actions';
+import * as actions from 'store/actions/games';
 
 import { Cell } from './cell';
 

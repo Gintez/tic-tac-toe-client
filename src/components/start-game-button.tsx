@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators, Dispatch } from 'redux';
 
 import Button from 'components/button';
-import * as actions from 'store/actions';
+import * as actions from 'store/actions/games';
 
 interface DispatchProps {
   actions: typeof actions;

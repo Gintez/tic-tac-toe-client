@@ -1,4 +1,4 @@
-import { addActionLog } from './actions';
+import { addActionLog } from './actions/games';
 
 const loggingMiddleware = (store: any) => (next: any) => (action: {
   type: string;

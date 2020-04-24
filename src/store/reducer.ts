@@ -10,7 +10,7 @@ import {
   addActionLog,
   endGame,
   setWinner
-} from './actions';
+} from './actions/games';
 
 interface DefaultState {
   currentPlayer: Players;
